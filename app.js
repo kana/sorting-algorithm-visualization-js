@@ -48,7 +48,9 @@
   var cc = {};
 
   function reset() {
-    cc.ns = makeTestData(N);
+    cc = {
+      ns: makeTestData(N)
+    };
     draw(cc);
     updateState('Not sorted.');
   }
