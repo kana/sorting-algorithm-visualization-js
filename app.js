@@ -55,7 +55,8 @@
     updateState('Not sorted.');
   }
 
-  function sort(ns) {
+  function sort(cont) {
+    var ns = cont.ns;
     var n = ns.length;
     for (var i = 0; i < n - 1; i++) {
       for (var j = i + 1; j < n; j++) {
@@ -69,7 +70,7 @@
   }
 
   function next() {
-    sort(cc.ns);
+    sort(cc);
     draw(cc);
   }
 
