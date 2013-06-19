@@ -40,5 +40,7 @@
     var ns = makeTestData(N);
     draw(ns);
   }
+
+  $('#reset').click(function () {reset();});
 })();
 // vim: expandtab softtabstop=2 shiftwidth=2
