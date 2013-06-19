@@ -52,6 +52,7 @@
     };
     draw(cc);
     updateState('Not sorted.');
+    $('#next').removeAttr('disabled');
   }
 
   function sortByStep(cont) {
@@ -79,6 +80,8 @@
     }
     draw(cc);
     updateState(p ? 'Sorting...' : 'Sorted.');
+    if (!p)
+      $('#next').attr('disabled', 'disabled');
   }
 
   $('#reset').click(function () {reset();});
