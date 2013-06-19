@@ -55,22 +55,29 @@
     updateState('Not sorted.');
   }
 
-  function sort(cont) {
+  function sortByStep(cont) {
     var ns = cont.ns;
     var n = ns.length;
-    for (var i = 0; i < n - 1; i++) {
-      for (var j = i + 1; j < n; j++) {
+    for (var i = cont.i || 0; i < n - 1; i++) {
+      for (var j = cont.j || i + 1; j < n; j++) {
         if (ns[i] > ns[j]) {
-          var t = ns[i];
-          ns[i] = ns[j];
-          ns[j] = t;
+          cont.i = i;
+          cont.j = j + 1;
+          return [i, j];
         }
       }
+      cont.j = undefined;
     }
+    return false;
   }
 
   function next() {
-    sort(cc);
+    var p = sortByStep(cc);
+    if (p) {
+      var t = cc.ns[p[0]];
+      cc.ns[p[0]] = cc.ns[p[1]];
+      cc.ns[p[1]] = t;
+    }
     draw(cc);
   }
 
