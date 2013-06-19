@@ -38,6 +38,7 @@
   function draw(cont) {
     var lines = cont.ns.map(function (n) {return repeat('#', n);});
     $('#canvas').text(lines.join('\n'));
+    updateState(isSorted(cont.ns) ? 'Sorted.' : 'Sorting...');
   }
 
   function updateState(message) {
@@ -66,7 +67,6 @@
   }
 
   function next() {
-    updateState('Sorting...');
     sort(cc.ns);
     draw(cc);
   }
