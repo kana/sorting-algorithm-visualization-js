@@ -51,6 +51,7 @@
   }
 
   $('#reset').click(function () {reset();});
+  $('#next').click(function () {next();});
 
   reset();
 })();
