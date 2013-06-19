@@ -36,6 +36,10 @@
     $('#canvas').text(lines.join('\n'));
   }
 
+  function updateState(message) {
+    $('#state').text(message);
+  }
+
   function reset() {
     var ns = makeTestData(N);
     draw(ns);
