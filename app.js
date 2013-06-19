@@ -46,6 +46,10 @@
     updateState('Not sorted.');
   }
 
+  function next() {
+    updateState('Sorting...');
+  }
+
   $('#reset').click(function () {reset();});
 
   reset();
