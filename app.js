@@ -50,6 +50,7 @@
 
   function next() {
     updateState('Sorting...');
+    draw(cc);
   }
 
   $('#reset').click(function () {reset();});
