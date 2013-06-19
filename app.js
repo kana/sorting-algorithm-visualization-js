@@ -43,6 +43,7 @@
   function reset() {
     var ns = makeTestData(N);
     draw(ns);
+    updateState('Not sorted.');
   }
 
   $('#reset').click(function () {reset();});
