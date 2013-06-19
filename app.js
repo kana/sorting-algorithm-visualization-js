@@ -42,5 +42,7 @@
   }
 
   $('#reset').click(function () {reset();});
+
+  reset();
 })();
 // vim: expandtab softtabstop=2 shiftwidth=2
