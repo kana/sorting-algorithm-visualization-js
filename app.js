@@ -31,8 +31,8 @@
     return new Array(n + 1).join(s);
   }
 
-  function draw(ns) {
-    var lines = ns.map(function (n) {return repeat('#', n);});
+  function draw(cont) {
+    var lines = cont.ns.map(function (n) {return repeat('#', n);});
     $('#canvas').text(lines.join('\n'));
   }
 
@@ -44,7 +44,7 @@
 
   function reset() {
     cc.ns = makeTestData(N);
-    draw(cc.ns);
+    draw(cc);
     updateState('Not sorted.');
   }
 
