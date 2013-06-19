@@ -35,9 +35,13 @@
     return ns.every(function (v, i) {return i == 0 || ns[i - 1] <= v;});
   }
 
-  function draw(cont) {
-    var lines = cont.ns.map(function (n) {return repeat('#', n);});
-    $('#canvas').text(lines.join('\n'));
+  function draw(cont, p) {
+    var lines = cont.ns.map(function (n, i) {
+      var bar = repeat('#', n);
+      var klass = p && (i == p[0] || i == p[1]) ? 'swapped' : '';
+      return '<div class="' + klass + '">' + bar + '</div>';
+    });
+    $('#canvas').html(lines.join('\n'));
   }
 
   function updateState(message) {
@@ -83,7 +87,7 @@
       cc.ns[p[0]] = cc.ns[p[1]];
       cc.ns[p[1]] = t;
     }
-    draw(cc);
+    draw(cc, p);
     updateState(p ? 'Sorting...' : 'Sorted.');
     if (!p)
       $('#next').attr('disabled', 'disabled');
