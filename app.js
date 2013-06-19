@@ -35,5 +35,10 @@
     var lines = ns.map(function (n) {return repeat('#', n);});
     $('#canvas').text(lines.join('\n'));
   }
+
+  function reset() {
+    var ns = makeTestData(N);
+    draw(ns);
+  }
 })();
 // vim: expandtab softtabstop=2 shiftwidth=2
