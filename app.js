@@ -26,5 +26,9 @@
   function makeTestData(n) {
     return shuffle(listNaturalNumbers(n));
   }
+
+  function repeat(s, n) {
+    return new Array(n + 1).join(s);
+  }
 })();
 // vim: expandtab softtabstop=2 shiftwidth=2
