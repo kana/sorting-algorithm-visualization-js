@@ -40,7 +40,7 @@
     $('#state').text(message);
   }
 
-  var cont = {};
+  var cc = {};
 
   function reset() {
     var ns = makeTestData(N);
