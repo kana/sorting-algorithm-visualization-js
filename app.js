@@ -31,6 +31,10 @@
     return new Array(n + 1).join(s);
   }
 
+  function isSorted(ns) {
+    return ns.every(function (v, i) {return i == 0 || ns[i - 1] <= v;});
+  }
+
   function draw(cont) {
     var lines = cont.ns.map(function (n) {return repeat('#', n);});
     $('#canvas').text(lines.join('\n'));
