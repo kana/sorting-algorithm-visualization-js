@@ -40,6 +40,8 @@
     $('#state').text(message);
   }
 
+  var cont = {};
+
   function reset() {
     var ns = makeTestData(N);
     draw(ns);
