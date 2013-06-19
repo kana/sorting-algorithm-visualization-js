@@ -22,5 +22,9 @@
     }
     return ns;
   }
+
+  function makeTestData(n) {
+    return shuffle(listNaturalNumbers(n));
+  }
 })();
 // vim: expandtab softtabstop=2 shiftwidth=2
