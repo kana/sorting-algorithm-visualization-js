@@ -43,8 +43,8 @@
   var cc = {};
 
   function reset() {
-    var ns = makeTestData(N);
-    draw(ns);
+    cc.ns = makeTestData(N);
+    draw(cc.ns);
     updateState('Not sorted.');
   }
 
