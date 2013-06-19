@@ -30,5 +30,10 @@
   function repeat(s, n) {
     return new Array(n + 1).join(s);
   }
+
+  function draw(ns) {
+    var lines = ns.map(function (n) {return repeat('#', n);});
+    $('#canvas').text(lines.join('\n'));
+  }
 })();
 // vim: expandtab softtabstop=2 shiftwidth=2
