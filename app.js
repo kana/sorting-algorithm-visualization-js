@@ -55,24 +55,29 @@
     $('#next').removeAttr('disabled');
   }
 
-  function sortByStep(cont) {
+  function bubbleSort(cont) {
     var ns = cont.ns;
     var n = ns.length;
-    for (var i = cont.i || 0; i < n - 1; i++) {
-      for (var j = cont.j || i + 1; j < n; j++) {
-        if (ns[i] > ns[j]) {
-          cont.i = i;
-          cont.j = j + 1;
-          return [i, j];
+    var swapped;
+    
+    do {
+      swapped = cont.swapped || false;
+      cont.swapped = false;
+      for (var i = cont.i || 1; i < n; i++) {
+        if (ns[i - 1] > ns[i]) {
+          cont.i = i + 1;
+          cont.swapped = true;
+          return [i - 1, i];
         }
       }
-      cont.j = undefined;
-    }
+      cont.i = undefined;
+    } while (swapped);
+
     return false;
   }
 
   function next() {
-    var p = sortByStep(cc);
+    var p = bubbleSort(cc);
     if (p) {
       var t = cc.ns[p[0]];
       cc.ns[p[0]] = cc.ns[p[1]];
